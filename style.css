@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.taskcard{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: red;
+}
+#tasks{
+    margin-left: 30%;
+    margin-right: 30%;
+}
+.coverpic{
+    width: 10em;
+    height: 10em;
+}
+.classdone{
+background-color: green;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+}
+.formformat{
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+margin-bottom: 1em;
+}
+.texttype{
+    outline: 0;
+  border-width: 0 0 2px;
+  border-color: blue;
+  width: 10em;
+
+}
+.texttype:focus{
+    width: 15em;
+    transition-duration: 2s;
+}
+.imgcontainer{
+    margin-left: auto;
+margin-right: auto;
+text-align: center;
+}
+.buttontorule{
+    border: none;
+    padding: 0.5em 0.5em;
+    color: white;
+    background-color: rgb(0, 0, 255);
+    width: 10vw;
+}
+.grid{
+    margin-left: 10%;
+    margin-right: 10%;
+    border: 1px solid;
+}
