@@ -10,6 +10,9 @@
     text-align: center;
     background-color: red;
 }
+.taskcard:hover{
+    cursor: pointer;
+}
 #tasks{
     margin-left: 30%;
     margin-right: 30%;
