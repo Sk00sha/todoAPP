@@ -15,7 +15,7 @@ function getvaluefromform(){
         counter++;
         array.push(objekt);
         localStorage.setItem('polozka'+counter,JSON.stringify(objekt));
-        creatediv(headlight,task);
+        creatediv(headlight.value,task.value);
     }else{
     array.forEach(element => {
         if (element.popis==task.value || element.nazov==headlight.value){
@@ -28,7 +28,7 @@ function getvaluefromform(){
             }
             counter++;
         localStorage.setItem('polozka'+counter,JSON.stringify(objekt));
-        creatediv(headlight,task);
+        creatediv(headlight.value,task.value);
         
     }
     });
@@ -45,8 +45,8 @@ function creatediv(head,task){
         li.setAttribute('class','classdone');
         tasksdone++;
     });
-    p.textContent=task.value;
-    h.textContent="Názov: "+head.value;
+    p.textContent=task;
+    h.textContent="Názov: "+head;
     li.appendChild(h);
     li.appendChild(p);
 uli.appendChild(li);
@@ -65,8 +65,8 @@ function collectstoragedata() {
     if (localStorage.length>0) {
         var local=localStorage;
         Object.keys(local).forEach(function(key){
-            console.log(local.getItem(key));
-            creatediv(local.getItem(key),local.getItem(key));
+            var objekt=(JSON.parse(local.getItem(key)));
+            console.log(creatediv(objekt.nazov,objekt.popis));
          });
     }
 }
