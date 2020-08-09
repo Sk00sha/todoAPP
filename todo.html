@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
     <title>MyTodoApp</title>
 </head>
@@ -13,10 +15,15 @@
     </div>
     <div class="formformat">
     <form >
+        <span style="font-weight:bold">Názov:</span> 
         <input class="texttype"type="text" name="nazov" id="name">
+        <span style="font-weight:bold">Bližšie informácie:</span> 
         <input class="texttype"type="text" name="nazovtasku" id="taskname">
         <button class="buttontorule" id="nvm"type="button" onclick="getvaluefromform();">Pridaj task</button>
     </form>
+    <div class="container">
+        <div class="skills html">0%</div>
+      </div>
 </div>
 </div>
 <div id="tasks">
