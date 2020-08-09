@@ -44,6 +44,7 @@ function creatediv(head,task){
     li.addEventListener('click',function(){
         li.setAttribute('class','classdone');
         tasksdone++;
+        taskcounter(counter,tasksdone);
     });
     p.textContent=task;
     h.textContent="Názov: "+head;
@@ -65,6 +66,7 @@ function collectstoragedata() {
     if (localStorage.length>0) {
         var local=localStorage;
         Object.keys(local).forEach(function(key){
+            counter++;
             var objekt=(JSON.parse(local.getItem(key)));
             console.log(creatediv(objekt.nazov,objekt.popis));
          });
