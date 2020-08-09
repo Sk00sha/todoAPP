@@ -58,6 +58,7 @@ text-align: center;
     margin-top: 1%;
 }
 .grid{
+    position: relative;
     margin-top: 5%;
     margin-left: auto;
     margin-right: auto;
