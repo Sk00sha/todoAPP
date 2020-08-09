@@ -1,14 +1,38 @@
 var counter=0;
 var tasksdone=0;
+var array=[];
 function getvaluefromform(){
     document.getElementById("nvm").addEventListener("click", function(event){
         event.preventDefault()
       });
     var headlight=document.getElementById("name");
     var task=document.getElementById("taskname");
-    creatediv(headlight,task);
-    counter++;
-    console.log(counter);
+    if (array.length==0){
+        var objekt={
+            nazov:headlight.value,
+            popis:task.value,
+        }
+        counter++;
+        array.push(objekt);
+        localStorage.setItem('polozka'+counter,JSON.stringify(objekt));
+        creatediv(headlight,task);
+    }else{
+    array.forEach(element => {
+        if (element.popis==task.value || element.nazov==headlight.value){
+            console.log("element je už in");
+        }
+        else{
+            var objekt={
+                nazov:headlight.value,
+                popis:task.value,
+            }
+            counter++;
+        localStorage.setItem('polozka'+counter,JSON.stringify(objekt));
+        creatediv(headlight,task);
+        
+    }
+    });
+}    
 }
 function creatediv(head,task){
     var grid=document.getElementById("grid");
@@ -20,7 +44,6 @@ function creatediv(head,task){
     li.addEventListener('click',function(){
         li.setAttribute('class','classdone');
         tasksdone++;
-        console.log(taskcounter(counter,tasksdone));
     });
     p.textContent=task.value;
     h.textContent="Názov: "+head.value;
@@ -38,3 +61,13 @@ function taskcounter(param1,param2) {
 }
 return Math.ceil(percent);
 }
+function collectstoragedata() {
+    if (localStorage.length>0) {
+        var local=localStorage;
+        Object.keys(local).forEach(function(key){
+            console.log(local.getItem(key));
+            creatediv(local.getItem(key),local.getItem(key));
+         });
+    }
+}
+collectstoragedata();
